@@ -1,0 +1,121 @@
+.map {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  background: linear-gradient(135deg, #0f2117 0%, #1a3a28 100%);
+}
+
+.road {
+  stroke: #3a4a3e;
+  stroke-linecap: round;
+  transition: stroke 0.3s ease, stroke-width 0.3s ease;
+  opacity: 0.7;
+}
+
+.road:hover {
+  stroke: #5a6a5e;
+  opacity: 0.9;
+}
+
+.road-path {
+  stroke: #b8c832;
+  stroke-width: 6px !important;
+  opacity: 1;
+  filter: drop-shadow(0 0 4px rgba(184, 200, 50, 0.6));
+}
+
+.road-label {
+  font-size: 10px;
+  font-weight: 600;
+  fill: #8a8c7e;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+.road-label-path {
+  fill: #b8c832;
+  font-weight: 700;
+}
+
+.node-label {
+  font-size: 9px;
+  font-weight: 600;
+  fill: #e8e8e2;
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+  max-width: 50px;
+  word-wrap: break-word;
+}
+
+/* Nodes */
+.node {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.node-start {
+  fill: url(#startGradient);
+  stroke: #d4e850;
+  stroke-width: 3;
+  filter: drop-shadow(0 0 8px rgba(184, 200, 50, 0.5));
+}
+
+.node-start:hover {
+  r: 18;
+  filter: drop-shadow(0 0 12px rgba(184, 200, 50, 0.8));
+}
+
+.node-end {
+  fill: url(#endGradient);
+  stroke: #f0a844;
+  stroke-width: 3;
+  filter: drop-shadow(0 0 8px rgba(240, 168, 68, 0.5));
+}
+
+.node-end:hover {
+  r: 18;
+  filter: drop-shadow(0 0 12px rgba(240, 168, 68, 0.8));
+}
+
+.node-path {
+  fill: #5a2d82;
+  stroke: #7a4da2;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 6px rgba(90, 45, 130, 0.6));
+  animation: pulse-node 1.5s ease-in-out infinite;
+}
+
+.node-visited {
+  fill: rgba(217, 75, 75, 0.35);
+  stroke: rgba(217, 75, 75, 0.85);
+  stroke-width: 2;
+}
+
+.node:not(.node-start):not(.node-end):not(.node-path):not(.node-visited) {
+  fill: #2a3a2e;
+  stroke: #3a4a3e;
+  stroke-width: 2;
+}
+
+.node:not(.node-start):not(.node-end):not(.node-path):not(.node-visited):hover {
+  fill: #3a4a3e;
+  stroke: #4a5a4e;
+  r: 18;
+}
+
+@keyframes pulse-node {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Gradients in SVG */
+defs {
+  display: none;
+}

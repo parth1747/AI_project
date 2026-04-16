@@ -1,0 +1,66 @@
+.grid {
+  display: grid;
+  gap: 1px;
+  background-color: #1a2a20;
+  padding: 10px;
+  border-radius: 8px;
+  width: fit-content;
+  /*box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);*/
+}
+
+.grid-cell {
+  border: 1px solid #2a3a2e;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.grid-cell-empty {
+  background-color: #f5f5f0;
+  border: 1px solid #e8e8e2;
+}
+
+.grid-cell-empty:hover {
+  background-color: #f0ede5;
+}
+
+.grid-cell-obstacle {
+  background-color: #0d1a14;
+  border: 1px solid #050908;
+}
+
+.grid-cell-start {
+  background: linear-gradient(135deg, #b8c832, #a8b820);
+  border: 2px solid #b8c832;
+  font-weight: bold;
+  /*box-shadow: inset 0 0 6px rgba(184, 200, 50, 0.4);*/
+}
+
+.grid-cell-end {
+  background: linear-gradient(135deg, #c9d63a, #b8c832);
+  border: 2px solid #c9d63a;
+  font-weight: bold;
+  /*box-shadow: inset 0 0 6px rgba(201, 214, 58, 0.4);*/
+}
+
+.grid-cell-path {
+  background-color: #8a8c7e;
+  border: 1px solid #7a7c6e;
+  animation: pulse-path 1.5s ease-in-out infinite;
+}
+
+.grid-cell-visited {
+  background-color: rgba(184, 200, 50, 0.3);
+  border: 1px solid rgba(184, 200, 50, 0.5);
+  opacity: 0.8;
+}
+
+@keyframes pulse-path {
+  0%, 100% {
+    opacity: 1;
+    background-color: #8a8c7e;
+  }
+  50% {
+    opacity: 0.6;
+    background-color: #7a7c6e;
+  }
+}
